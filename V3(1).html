@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div id="root">
+        <ul>
+            <li v-for="fruit in fruits" v-text="fruit"></li>
+        </ul>
+
+        <input id="input" type="text">
+        <button id="button">Add Fruits</button>
+    </div>
+    <script src="https://unpkg.com/vue@2.5.22/dist/vue.js"></script>
+
+
+    <script>
+
+
+
+        var app = new Vue({
+            el: '#root',
+            data: {
+                fruits: ['mango', 'chiku', 'grape', 'papaya']
+            },
+
+            mounted() {
+
+
+                document.querySelector('#button').addEventListener('click', () => {
+                    let fruit = document.querySelector('#input');
+
+                    app.fruits.push(fruit.value);
+
+                    fruit.value = '';
+                });
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div id="root">
+        <ul>
+            <li v-for="fruit in fruits" v-text="fruit"></li>
+        </ul>
+
+        <input id="input" type="text" v-model="newfruit">
+        <button v-on:click="addfruit">Add Fruit</button>
+    </div>
+
+
+    <script src="https://unpkg.com/vue@2.5.22/dist/vue.js"></script>
+
+
+    <script>
+
+
+
+        var app = new Vue({
+            el: '#root',
+            data: {
+                newfruit: '',
+                fruits: ['mango', 'chiku', 'grape', 'papaya']
+            },
+
+            methods:{
+                addfruit(){
+
+
+                    this.fruits.push(this.newfruit);
+
+                    this.newfruit = '';
+                }
+
+            },
+
+        });
+
+
+    </script>
+</body>
+
+</html>
